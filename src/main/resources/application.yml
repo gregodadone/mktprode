@@ -1,0 +1,13 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: GMT-3
+    hibernate:
+      ddl-auto: create
+    open-in-view: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/mktprode?serverTimezone=GMT-3&useLegacyDatetimeCode=false
+    username: root
+    password: 261289
