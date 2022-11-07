@@ -9,10 +9,12 @@ import com.majorkeytech.mktprode.service.TeamService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @AllArgsConstructor
+@Transactional
 public class TeamServiceImpl implements TeamService {
     private final TeamRepository teamRepository;
     private final FootballDataMapper footballDataMapper;

@@ -39,4 +39,6 @@ public class MatchController {
     public List<Match> getMatchesByStage(@PathVariable Stage stage) {
         return matchService.getMatchesByStage(stage);
     }
+
+    //partidos disponibles para marcar para el usuario
 }

@@ -4,8 +4,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.majorkeytech.mktprode.footballdata.FootballDataMapper;
 import com.majorkeytech.mktprode.footballdata.model.FDMatch;
 import com.majorkeytech.mktprode.footballdata.model.FDTeam;
+import com.majorkeytech.mktprode.model.entity.Player;
+import com.majorkeytech.mktprode.model.entity.Prediction;
 import com.majorkeytech.mktprode.service.MatchService;
 import com.majorkeytech.mktprode.service.TeamService;
+import com.majorkeytech.mktprode.service.helper.PointsCalculator;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +25,7 @@ import static com.majorkeytech.mktprode.model.constants.Path.*;
 public class ManualActionsController {
     private final MatchService matchService;
     private final TeamService teamService;
+    private final PointsCalculator pointsCalculator;
     private final FootballDataMapper footballDataMapper;
 
     @GetMapping(TEAMS_FROM_FOOTBALL_DATA)
@@ -47,5 +51,16 @@ public class ManualActionsController {
     @PostMapping(UPDATE_MATCHES)
     public void updateMatchesDb() throws JsonProcessingException {
         matchService.updateDBMatches();
+    }
+
+
+    @PostMapping(UPDATE_POINTS_PER_PREDICTION)
+    public List<Prediction> updatePointsPerPrediction() {
+        return pointsCalculator.updatePointsPerPrediction();
+    }
+
+    @PostMapping(UPDATE_POINTS_PER_PLAYER)
+    public List<Player> updatePointsPerPlayer() {
+        return pointsCalculator.updatePointsPerPlayer();
     }
 }
