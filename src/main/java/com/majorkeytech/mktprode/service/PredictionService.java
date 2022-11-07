@@ -11,12 +11,8 @@ public interface PredictionService {
     Prediction getPredictionById(Integer id);
     List<Prediction> getPredictionsByPlayer(Integer playerId);
     List<Prediction> getPredictionsByMatch(Integer matchId);
-
     List<Prediction> getPredictionsByFinished();
-
     List<Prediction> getPredictionsByPlayerAndFinished(Player player);
-
     void postPrediction(PostPredictionRequest postPredictionRequest);
-
     void putPrediction(PutPredictionRequest putPredictionRequest);
 }

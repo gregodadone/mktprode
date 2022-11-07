@@ -14,8 +14,6 @@ public interface PredictionRepository extends JpaRepository<Prediction, Integer>
     List<Prediction> getPredictionsByPlayer(Player player);
     List<Prediction> getPredictionsByFinished(Boolean finished);
     List<Prediction> getPredictionsByMatch(Match match);
-
     List<Prediction> getPredictionsByFinishedAndMatch_Status(Boolean finished, String status);
-
     List<Prediction> getPredictionsByPlayerAndFinished(Player player, Boolean finished);
 }

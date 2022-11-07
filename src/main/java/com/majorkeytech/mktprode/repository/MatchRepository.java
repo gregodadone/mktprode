@@ -12,6 +12,4 @@ public interface MatchRepository extends JpaRepository<Match, Integer> {
     Match getMatchByFdId(Integer fdId);
     List<Match> getAllByGroup(String group);
     List<Match> getAllByStage(String stage);
-
-
 }

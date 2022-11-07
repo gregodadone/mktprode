@@ -10,6 +10,5 @@ public interface TeamService {
     Team getTeamByName(String name);
     Team getTeamByFdId(Integer fdId);
     void populateDbTeams() throws JsonProcessingException;
-
     List<Team> getAllTeams();
 }
